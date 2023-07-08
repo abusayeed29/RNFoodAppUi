@@ -1,7 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import Home from './src/screens/Home';
+import Cart from './src/screens/Cart';
+import Details from './src/screens/Details';
+import Tabs from './src/screens/Tabs';
 import Welcome from './src/screens/Welcome';
 
 const Stack = createStackNavigator();
@@ -11,13 +13,23 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="Welcome"
+          component={Welcome}
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Welcome"
-          component={Welcome}
+          name="Tabs"
+          component={Tabs}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={Cart}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

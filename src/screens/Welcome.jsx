@@ -30,7 +30,7 @@ const Welcome = () => {
       </Text>
       <TouchableOpacity
         onPress={() => {
-          nav.navigate('Home');
+          nav.navigate('Tabs');
         }}
         style={styles.btnStyle}>
         <Text

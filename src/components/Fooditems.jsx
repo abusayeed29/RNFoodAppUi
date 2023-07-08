@@ -1,9 +1,12 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { FlatList, Image, Text, View } from 'react-native';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../utils/Colors';
 
 const Fooditems = () => {
+  const nav = useNavigation();
+
   const food = [
     {
       id: 1,
@@ -46,7 +49,10 @@ const Fooditems = () => {
         showsHorizontalScrollIndicator={false}
         data={food}
         renderItem={({item, index}) => (
-          <View
+          <TouchableOpacity
+            onPress={() => {
+              nav.navigate('Details', {data: item});
+            }}
             style={{
               backgroundColor: '#E3E3E3',
               width: 150,
@@ -83,7 +89,7 @@ const Fooditems = () => {
               </Text>
               <Ionicons name="add-circle" size={24} color="green" />
             </View>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
